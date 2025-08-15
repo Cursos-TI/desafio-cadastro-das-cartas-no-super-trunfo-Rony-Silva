@@ -1,22 +1,133 @@
+
+
+//Declaração de Biblioteca de trabalho.
 #include <stdio.h>
+#include <string.h>
+#include <locale.h>
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
+// Declaração de Constantes.
 
-int main() {
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
+#define EST 20
+#define COD 20
+#define CID 20
+
+
+//Declaração de variavel.
+
+int main(void){
+	
+char estado[EST];    //Strings
+char cod[COD];
+char cid[CID];
+
+float pop=0;        // Número com casa decimal.
+float area=0;
+float pib=0;
+int npt=0;         //Número inteiro.
+float dens=0, pibper =0;
+
+printf("Informe o Estado:\n" ); //Imprime na tela
+     fgets(estado,EST,stdin);        //Captura informação do teclado
+        fflush(stdin);
+     estado[strlen(estado) -1] = '\0';   // Substitui o ultimo caracter \n para \0
+       
+
+printf("Informe o Codigo do Estado:\n" );
+        fgets(cod,COD,stdin);
+    	fflush(stdin);
+        cod[strlen(cod) -1] = '\0';
+        
     
-    // Cadastro das Cartas:
-    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
+printf("Informe a Cidade:\n" );
+        fgets(cid,CID,stdin);
+     	fflush(stdin);
+        cid[strlen(cid) -1] = '\0';
+        
     
-    // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
+printf("Informe a populacao:\n" );
+    	scanf("%f",&pop);             // Captura informação do teclado
+    	getchar();
+    
+    
+printf("Informe a Area:\n" );
+    	scanf("%f",&area);
+        getchar();
+    	
+printf("Informe o PIB:\n" );
+    	scanf("%f",&pib);
+        getchar();
+    
+printf("Informe o numeros de Pontos turisticos:\n" );
+    	scanf("%d",&npt);
+        getchar();
 
-    return 0;
+// Operação Aritimética
+dens = (pop / area);
+pibper = (pib / pop);
+
+printf("\n***[Carta 1]***\n");
+
+// Imprime o resultado 
+    
+printf("Estado: %s\nCódigo do Estado: %s\nCidade: %s\nPopulacao: %.3f Habitantes\nExtensão Geográfica: %.3f Km²\nProduto interno bruto: R$ %.1f milhões\nQuantidade de pontos Turísticos: %d\nDensidade Populacional: %.2f hab/km²\nPIB per Capita: %.3f reais. ",estado,cod,cid,pop,area,pib,npt,dens,pibper);
+
+// Separador
+printf("\n=========================================================================================//=================================================================================================\n\n");
+ // limpa a variável
+dens =0;
+pibper =0;
+
+ printf("Informe o Estado:\n");
+    fgets(estado,EST,stdin);
+    fflush(stdin);	
+    estado[strlen(estado)-1] = '\0';
+        
+   
+
+printf("Informe o Codigo do Estado:\n" );
+    fgets(cod,COD,stdin);
+    fflush(stdin);	
+    cod[strlen(cod) -1] = '\0';
+        
+       
+    
+printf("Informe a Cidade:\n" );
+     fgets(cid,CID,stdin);
+     fflush(stdin);
+     cid[strlen(cid) -1] = '\0';
+        
+         
+    
+printf("Informe a populacao:\n" );
+    	scanf("%f",&pop);
+        getchar();
+    	
+    
+    
+printf("Informe a Area:\n" );
+    	scanf("%f",&area);
+        getchar();
+    
+    
+    	
+printf("Informe o PIB:\n" );
+    	scanf("%f",&pib);
+        getchar();
+    
+    
+printf("Informe o numeros de Pontos turisticos:\n" );
+    	scanf("%d",&npt);
+        getchar();
+
+// Operação Aritimética
+dens = (pop / area);
+pibper = (pib / pop);
+       
+   
+printf("\n***[Carta 2]***\n");
+    
+printf("Estado :%s\nCódigo do Estado : %s\nCidade : %s\nQuantidade populacional é de %.3f Habitantes\nExtensão Geográfica é de %.3f Km²\nProduto interno bruto é de R$ %.1f milhões\nQuantidade de pontos Turísticos: %d\nDensidade Populacional: %.2f hab/km²\nPIB per Capita: %.3f reais. ",estado,cod,cid,pop,area,pib,npt,dens,pibper);
+
+
+    return 0;     // Retorna 0
 }
